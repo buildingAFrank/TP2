@@ -5,11 +5,11 @@
 # Toute modification des directives entre ces marqueurs sera outrepassée.
 <IfModule mod_rewrite.c>
 RewriteEngine On
-RewriteBase /2020-veille/wordpress/wordpress/
+RewriteBase /edsa-2020-veille/
 RewriteRule ^index\.php$ - [L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule . /2020-veille/wordpress/wordpress/index.php [L]
+RewriteRule . /edsa-2020-veille/index.php [L]
 </IfModule>
 
 # END WordPress
