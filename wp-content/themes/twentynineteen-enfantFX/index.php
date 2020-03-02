@@ -22,7 +22,14 @@ get_header();
 
 		<?php
 		if ( have_posts() ) {
+        $args=array(
+                'numberposts' => 3,
+            'category' =>3,
+        );
 
+        $latest_posts=get_posts($args);;
+
+        echo "<pre>".$latest_posts."</pre>";
 			// Load posts loop.
 			while ( have_posts() ) {
 				the_post();
