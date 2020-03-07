@@ -13,24 +13,32 @@ get_header();
 </div>
 
 <main class="main-content">
-    <section>
-        <h2>prochains evenements</h2>
-        <div class="eventGrid">
+
         <?php
         //start the loop
         $args=array(
                 'category_name' => 'evenement',
-                'posts_per_page'=> 3
+                'posts_per_page'=> 3,
+                'orderby'=>'date',
+                'order'=>'DESC'
         );
         $query1= new WP_Query($args);
+        if($query1->have_posts()){
+    echo '<section>
+        <h2>prochains evenements</h2>
+        <div class="eventGrid">';
             while ($query1->have_posts()):
                 $query1->the_post();
                 get_template_part('partials/content/','event-card');
             endwhile;
-        wp_reset_query();
+            wp_reset_query();
+
+        }
+        echo ' </div>
+            </section>';
+
         ?>
-        </div>
-    </section>
+
 
 <section class="newsRecap">
 
