@@ -1,4 +1,10 @@
 <?php
+
+// below text excerpt operations taken from https://developer.wordpress.org/reference/functions/get_the_excerpt/#comment-3320
+$excerpt = get_the_excerpt();
+$excerpt = substr($excerpt, 0, 25);
+$result = substr($excerpt, 0, strrpos($excerpt, ' '));
+
 echo '
 <div class="eventCard">
             <div class="eventTitleContainer">
@@ -28,7 +34,7 @@ echo '
 </div>
 <div class="eventCTA">
     <p class="eventLegend">
-        '.get_the_excerpt().'
+        '.$result.'
     </p>
     <input type="button" value="Participer" class="button button__event button__tickets">
 </div>

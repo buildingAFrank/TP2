@@ -1,0 +1,90 @@
+.eventPreview{
+  display:flex;
+  flex-flow:row wrap;
+  justify-content: space-evenly;
+}
+
+.eventCard{
+  width:400px;height:400px;
+  margin:15px;
+  box-shadow: 0px 8px 10px 5px lightgrey;
+  object-fit:contain;
+  box-sizing:border-box;
+}
+.eventTitleContainer{
+  background-color:limegreen;
+  height:30px;
+  width:100%;
+}
+.eventTitleContainer .eventTitle{
+  margin:0;
+  margin-left:10px;
+  color:white;
+  font-size:1.2em;
+  line-height:1.2em;
+  padding-left:5px;
+}
+.eventGlance{
+  width:100%;
+  display:flex;
+  height:170px;
+}
+.eventHostTitle{
+  margin:0;
+}
+.eventHostName{
+  margin:10px 0 0;
+
+}
+
+.glanceLocation{
+  flex:0 1 50%;
+  text-align:center;
+  box-sizing:border-box;
+  object-fit:contain;
+  padding:0 6.25%;
+}
+.eventVisual{
+  width:100px;height:100px;
+  object-fit:contain;
+  box-sizing:border-box;
+  overflow:hidden;
+  border-radius:50%;
+  margin:auto;
+}
+
+.eventImage{
+  object-fit:contain;
+  height:100%;
+}
+
+.info{
+  flex:0 1 50%;
+}
+.dateInfo{
+
+  text-align:center;
+}
+
+.durationInfo{
+  text-align:center;
+}
+.durationTitle{
+  margin:0;
+}
+.durationTime{
+  margin:0;
+}
+.eventLegend{
+  font-size:1em;
+  padding-top:15px;
+  max-height:2em;
+  overflow:hidden;
+}
+.eventCTA{
+  width:100%;
+  text-align:center;
+}
+.button{
+  margin-top:10px;
+}

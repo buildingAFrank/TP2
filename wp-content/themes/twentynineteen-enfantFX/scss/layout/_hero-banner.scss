@@ -1,0 +1,30 @@
+
+.hero{
+  background-image:url(https://placekitten.com/1900/470);
+  background-position:center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width:100%;
+  height:470px;
+  .hero__content{
+    width:100%;
+    height:inherit;
+    display:flex;
+    flex-flow:column wrap;
+    justify-content:center;
+    align-content:center;
+    .hero__title{
+      color:green;
+      text-align:center;
+      margin:0;
+      &:before{
+        background:none;
+        content:"";
+        display:none;
+      }
+    }
+    .hero__text{
+      text-align:center;
+    }
+  }
+}

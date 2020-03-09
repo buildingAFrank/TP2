@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*
 Theme Name: theme enfant twentyNineteen
 Template:twentynineteen
@@ -12,199 +11,185 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
+.siteLogo {
+  width: 70px; }
 
-.siteLogo{
-  width:70px;
-}
-.menu{
-  position:absolute;
-  z-index:5;
-  background-color:rgba(0, 0, 0, 0.2);
-  color:white;
-  display:flex;
-  flex-flow:row nowrap;
-  height:70px;
-  width:100%;
-  height:70px;
-  width:100%;
-}
-.menu-main-navigation-container{
-  display:flex;
-  justify-content:flex-end;
-}
+.menu {
+  position: absolute;
+  z-index: 5;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: white;
+  display: flex;
+  flex-flow: row nowrap;
+  height: 70px;
+  width: 100%;
+  height: 70px;
+  width: 100%; }
+  .menu .menu-navigation {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    display: flex;
+    height: 70px;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center; }
+    .menu .menu-navigation li {
+      margin: 0 10px; }
+      .menu .menu-navigation li a {
+        padding: 36px 0 0;
+        text-decoration: none;
+        color: white; }
 
-.menu-main-navigation-container ul{
-  list-style: none;
-  display:flex;
-  height:70px;
-  width:100%;
-  justify-content:flex-end;
-  align-items:center;
-}
-.menu-main-navigation-container ul li{
-  margin:0 10px;
-}
-.menu-main-navigation-container ul li a{
-  padding:36px 0 27px;
-  text-decoration: none;
-  color:white;
-}
-.hero{
-  background-image:url(https://placekitten.com/1900/470);
-  background-position:center;
+.hero {
+  background-image: url(https://placekitten.com/1900/470);
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  width:100%;
-  height:470px;
-}
-.hero__content{
-  width:100%;
-  height:inherit;
-  display:flex;
-  flex-flow:column wrap;
-  justify-content:center;
-  align-content:center;
-}
-.hero__title{
-  color:green;
-}
-.hero__text{
-  text-align:center;
-}
-.newsRecap{
-  margin-top:50px;
-}
-.recapHeader{
-  text-align:center;
-  padding-bottom:15px;
-}
-.recapContainer{
-  display:flex;
-  flex-flow:row nowrap;
-  justify-content:center;
-}
-.recap{
-  margin:0 10px;
-}
-.nextEvents{
-  margin-top:50px;
-  display:flex;
-  justify-content:center;
-}
-.event{
-  margin:0 15px;
-  box-sizing:border-box;
-  object-fit:contain;
-  flex:0 1 33%;
-}
-.eventDate{
-  margin-left:9%;
-}
-.eventInfoCard{
-  display:flex;
-  flex-flow:row nowrap;
-  justify-content:center;
-  box-sizing:border-box;
-  overflow-y:hidden;
-  height:200px;
-}
-.eventImage{
-  flex:1 1 50%;
-  object-fit:contain;
-  height:100%;
-}
-.eventDetails{
-  display:inline;
-  flex:0 1 50%;
+  width: 100%;
+  height: 470px; }
+  .hero .hero__content {
+    width: 100%;
+    height: inherit;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center; }
+    .hero .hero__content .hero__title {
+      color: green;
+      text-align: center;
+      margin: 0; }
+      .hero .hero__content .hero__title:before {
+        background: none;
+        content: "";
+        display: none; }
+    .hero .hero__content .hero__text {
+      text-align: center; }
 
-}
-.eventGrid{
-  display:flex;
-  justify-content: space-evenly;
-}
+.eventCalendar {
+  margin-top: 50px;
+  width: 100%;
+  height: auto; }
+  .eventCalendar .calendarHeader {
+    text-align: center;
+    font-size: 1.2em; }
+  .eventCalendar .calendarGrid {
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px grey;
+    width: 80%;
+    margin: 5px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(31, 1fr);
+    grid-gap: 10px 10px;
+    margin: auto; }
 
-.eventCard{
-  width:400px;height:400px;
-  margin:15px;
+.eventDay {
+  box-shadow: 0px 0px 5px 0px lightgrey;
+  border-radius: 10px;
+  text-align: center; }
+
+.newsRecap {
+  margin-top: 50px; }
+  .newsRecap .recapHeader {
+    text-align: center;
+    padding-bottom: 15px; }
+
+.recapContainer {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center; }
+  .recapContainer .recap {
+    margin: 0 10px; }
+
+.eventPreview {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly; }
+
+.eventCard {
+  width: 400px;
+  height: 400px;
+  margin: 15px;
   box-shadow: 0px 8px 10px 5px lightgrey;
-  object-fit:contain;
-  box-sizing:border-box;
-}
-.eventTitleContainer{
-  background-color:limegreen;
-  height:30px;
-  width:100%;
-}
-.eventTitleContainer .eventTitle{
-  margin:0;
-  margin-left:10px;
-  color:white;
-  font-size:1.2em;
-  line-height:1.2em;
-  padding-left:5px;
-}
-.eventGlance{
-  width:100%;
-  display:flex;
-  height:170
-  px;
-}
-eventHostTitle{
-  margin:0;
-}
-.eventHostName{
-  margin:10px 0 0;
+  object-fit: contain;
+  box-sizing: border-box; }
 
-}
+.eventTitleContainer {
+  background-color: limegreen;
+  height: 30px;
+  width: 100%; }
 
-.glanceLocation{
-  flex:0 1 50%;
-  text-align:center;
-  box-sizing:border-box;
-  object-fit:contain;
-  padding:0 6.25%;
-}
-.eventVisual{
-  width:100px;height:100px;
-  object-fit:contain;
-  box-sizing:border-box;
-  overflow:hidden;
-  border-radius:50%;
-  margin:auto;
-}
+.eventTitleContainer .eventTitle {
+  margin: 0;
+  margin-left: 10px;
+  color: white;
+  font-size: 1.2em;
+  line-height: 1.2em;
+  padding-left: 5px; }
 
-.eventImage{
-  object-fit:contain;
-  height:100%;
-}
+.eventGlance {
+  width: 100%;
+  display: flex;
+  height: 170px; }
 
-.info{
-  flex:0 1 50%;
-}
-.dateInfo{
+.eventHostTitle {
+  margin: 0; }
 
-  text-align:center;
-}
+.eventHostName {
+  margin: 10px 0 0; }
 
-.durationInfo{
-  text-align:center;
-}
-.durationTitle{
-  margin:0;
-}
-.durationTime{
-  margin:0;
-}
-.eventLegend{
-  font-size:1em;
-  padding-top:15px;
-  max-height:2em;
-  overflow:hidden;
-}
-.eventCTA{
-  width:100%;
-  text-align:center;
-}
-.button{
-  margin-top:10px;
-}
+.glanceLocation {
+  flex: 0 1 50%;
+  text-align: center;
+  box-sizing: border-box;
+  object-fit: contain;
+  padding: 0 6.25%; }
+
+.eventVisual {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: auto; }
+
+.eventImage {
+  object-fit: contain;
+  height: 100%; }
+
+.info {
+  flex: 0 1 50%; }
+
+.dateInfo {
+  text-align: center; }
+
+.durationInfo {
+  text-align: center; }
+
+.durationTitle {
+  margin: 0; }
+
+.durationTime {
+  margin: 0; }
+
+.eventLegend {
+  font-size: 1em;
+  padding-top: 15px;
+  max-height: 2em;
+  overflow: hidden; }
+
+.eventCTA {
+  width: 100%;
+  text-align: center; }
+
+.button {
+  margin-top: 10px; }
+
+h1:before, h2:before, h3:before, h4:before, h5:before, h6:before {
+  background: none;
+  content: "";
+  display: none; }
+
+/*# sourceMappingURL=style.css.map */

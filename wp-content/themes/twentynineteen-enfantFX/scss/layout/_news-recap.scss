@@ -1,0 +1,24 @@
+
+.newsRecap{
+  margin-top:50px;
+  .recapHeader{
+    text-align:center;
+    padding-bottom:15px;
+  }
+}
+
+.recapContainer{
+  display:flex;
+  flex-flow:row nowrap;
+  justify-content:center;
+  .recap{
+    margin:0 10px;
+
+    .recapTitle{}
+    .auteur{}
+    .recapDate{}
+
+    .recapText{}
+    .newsLink{}
+  }
+}
