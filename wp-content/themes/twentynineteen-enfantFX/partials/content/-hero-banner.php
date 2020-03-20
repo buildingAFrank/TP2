@@ -10,7 +10,13 @@ echo"
                echo get_the_category()[0]->name;
             }
             echo "</h1>
-            <p class=\"hero__text\">".get_the_category()[0]->category_description."</p>
+            <p class=\"hero__text\">";
+            if(is_home()){
+    echo"Bienvenue sur le site";
+} else{
+    echo get_the_category()[0]->category_description;
+}
+echo"</p>
             <input type=\"button\" class=\"hero__cta\" value=\"Call To Action\">
         </div>
     </div>

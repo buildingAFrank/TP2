@@ -12,7 +12,8 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 .siteLogo {
-  width: 70px; }
+  width: 70px;
+}
 
 .menu {
   position: absolute;
@@ -24,22 +25,26 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   height: 70px;
   width: 100%;
   height: 70px;
-  width: 100%; }
-  .menu .menu-navigation {
-    display: flex;
-    justify-content: flex-end;
-    list-style: none;
-    display: flex;
-    height: 70px;
-    width: 100%;
-    justify-content: flex-end;
-    align-items: center; }
-    .menu .menu-navigation li {
-      margin: 0 10px; }
-      .menu .menu-navigation li a {
-        padding: 36px 0 0;
-        text-decoration: none;
-        color: white; }
+  width: 100%;
+}
+.menu .menu-navigation {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  display: flex;
+  height: 70px;
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+}
+.menu .menu-navigation li {
+  margin: 0 10px;
+}
+.menu .menu-navigation li a {
+  padding: 36px 0 0;
+  text-decoration: none;
+  color: white;
+}
 
 .hero {
   background-image: url(https://placekitten.com/1900/470);
@@ -47,65 +52,87 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 470px; }
-  .hero .hero__content {
-    width: 100%;
-    height: inherit;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-content: center; }
-    .hero .hero__content .hero__title {
-      color: green;
-      text-align: center;
-      margin: 0; }
-      .hero .hero__content .hero__title:before {
-        background: none;
-        content: "";
-        display: none; }
-    .hero .hero__content .hero__text {
-      text-align: center; }
+  height: 470px;
+}
+.hero .hero__content {
+  width: 100%;
+  height: inherit;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-content: center;
+}
+.hero .hero__content .hero__title {
+  color: green;
+  text-align: center;
+  margin: 0;
+}
+.hero .hero__content .hero__title:before {
+  background: none;
+  content: "";
+  display: none;
+}
+.hero .hero__content .hero__text {
+  text-align: center;
+  font-size: 1.2em;
+  color: white;
+  font-weight: 600;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.hero .hero__content .hero__cta {
+  margin: 0 auto;
+  max-width: 250px;
+}
 
 .eventCalendar {
   margin-top: 50px;
   width: 100%;
-  height: auto; }
-  .eventCalendar .calendarHeader {
-    text-align: center;
-    font-size: 1.2em; }
-  .eventCalendar .calendarGrid {
-    border-radius: 10px;
-    box-shadow: inset 0 0 10px grey;
-    width: 80%;
-    margin: 5px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(31, 1fr);
-    grid-gap: 10px 10px;
-    margin: auto; }
+  height: auto;
+}
+.eventCalendar .calendarHeader {
+  text-align: center;
+  font-size: 1.2em;
+}
+.eventCalendar .calendarGrid {
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px grey;
+  width: 80%;
+  margin: 5px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(31, 1fr);
+  grid-gap: 10px 10px;
+  margin: auto;
+}
 
 .eventDay {
   box-shadow: 0px 0px 5px 0px lightgrey;
   border-radius: 10px;
-  text-align: center; }
-
+  text-align: center;
+}
 .newsRecap {
-  margin-top: 50px; }
-  .newsRecap .recapHeader {
-    text-align: center;
-    padding-bottom: 15px; }
+  margin-top: 50px;
+}
+.newsRecap .recapHeader {
+  text-align: center;
+  padding-bottom: 15px;
+}
 
 .recapContainer {
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center; }
-  .recapContainer .recap {
-    margin: 0 10px; }
-
+  justify-content: center;
+}
+.recapContainer .recap {
+  margin: 0 10px;
+}
 .eventPreview {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-evenly; }
+  justify-content: space-evenly;
+}
 
 .eventCard {
   width: 400px;
@@ -113,12 +140,14 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   margin: 15px;
   box-shadow: 0px 8px 10px 5px lightgrey;
   object-fit: contain;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 .eventTitleContainer {
   background-color: limegreen;
   height: 30px;
-  width: 100%; }
+  width: 100%;
+}
 
 .eventTitleContainer .eventTitle {
   margin: 0;
@@ -126,25 +155,30 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   color: white;
   font-size: 1.2em;
   line-height: 1.2em;
-  padding-left: 5px; }
+  padding-left: 5px;
+}
 
 .eventGlance {
   width: 100%;
   display: flex;
-  height: 170px; }
+  height: 170px;
+}
 
 .eventHostTitle {
-  margin: 0; }
+  margin: 0;
+}
 
 .eventHostName {
-  margin: 10px 0 0; }
+  margin: 10px 0 0;
+}
 
 .glanceLocation {
   flex: 0 1 50%;
   text-align: center;
   box-sizing: border-box;
   object-fit: contain;
-  padding: 0 6.25%; }
+  padding: 0 6.25%;
+}
 
 .eventVisual {
   width: 100px;
@@ -153,43 +187,91 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   box-sizing: border-box;
   overflow: hidden;
   border-radius: 50%;
-  margin: auto; }
+  margin: auto;
+}
 
 .eventImage {
   object-fit: contain;
-  height: 100%; }
+  height: 100%;
+}
 
 .info {
-  flex: 0 1 50%; }
+  flex: 0 1 50%;
+}
 
 .dateInfo {
-  text-align: center; }
+  text-align: center;
+}
 
 .durationInfo {
-  text-align: center; }
+  text-align: center;
+}
 
 .durationTitle {
-  margin: 0; }
+  margin: 0;
+}
 
 .durationTime {
-  margin: 0; }
+  margin: 0;
+}
 
 .eventLegend {
   font-size: 1em;
   padding-top: 15px;
   max-height: 2em;
-  overflow: hidden; }
+  overflow: hidden;
+}
 
 .eventCTA {
   width: 100%;
-  text-align: center; }
+  text-align: center;
+}
 
 .button {
-  margin-top: 10px; }
+  margin-top: 10px;
+}
+
+.ateliers-title {
+  margin: 0 auto;
+  width: 100%;
+  text-align: center;
+}
+
+.atelier-grid {
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px grey;
+  width: 90%;
+  height: auto;
+  margin: 5px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  margin: auto;
+}
+.atelier-grid .atelier {
+  text-align: center;
+  border: 1px solid black;
+}
+.atelier-grid .atelier-formateur-title {
+  text-align: center;
+  height: auto;
+}
+.atelier-grid .atelier-formateur-title h2 {
+  width: 100%;
+  margin: 0 auto;
+}
+.atelier-grid .atelier-lunch h2 {
+  text-align: center;
+  margin: 0 auto;
+}
+.atelier-grid .atelier-info h5, .atelier-grid .atelier-info p {
+  margin: 0;
+}
 
 h1:before, h2:before, h3:before, h4:before, h5:before, h6:before {
   background: none;
   content: "";
-  display: none; }
+  display: none;
+}
 
 /*# sourceMappingURL=style.css.map */

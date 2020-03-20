@@ -1,0 +1,42 @@
+.ateliers-title{
+  margin:0 auto;
+  width:100%;
+  text-align:center;
+}
+.atelier-grid{
+  border-radius:10px;
+  box-shadow:inset 0 0 10px grey;
+  width:90%;
+  height:auto;
+  margin:5px;
+  display:grid;
+  grid-template-columns: repeat(4,1fr);
+  grid-template-rows:repeat(10 ,1fr);
+  margin:auto;
+
+  .atelier{
+    text-align:center;
+    border:1px solid black;
+
+
+  }
+  .atelier-formateur-title{
+    text-align:center;
+    height:auto;
+    h2{
+      width:100%;
+      margin:0 auto;
+    }
+  }
+  .atelier-lunch{
+    h2{
+      text-align:center;
+      margin:0 auto;
+    }
+  }
+  .atelier-info{
+    h5,p{
+      margin:0;
+    }
+  }
+}
