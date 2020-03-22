@@ -1,7 +1,10 @@
 <?php
 
 $class='-main';
-// below text excerpt operations taken from https://developer.wordpress.org/reference/functions/get_the_excerpt/#comment-3320
+
+
+$authorImg=get_wp_user_avatar_src("","original");
+
 $excerpt = get_the_excerpt();
 if(is_home()){
     $class='';
@@ -9,9 +12,7 @@ if(is_home()){
 }else{
     $excerpt = substr($excerpt, 0, 125);
 }
-
 $result = substr($excerpt, 0, strrpos($excerpt, ' '));
-
 
 
 
@@ -24,7 +25,7 @@ echo '
             <div class="host">
                 <h4 class="host__title">Responsable</h4>
                 <div class="host-visual">
-                    <img src="https://placekitten.com/200/200" alt="" class="host-visual__image">
+                    <img src="'.$authorImg.'" alt="" class="host-visual__image">
                 </div>
                 <h6 class="host__name">
                 '.get_the_author().'

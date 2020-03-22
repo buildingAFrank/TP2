@@ -167,8 +167,10 @@ Dans l'eventual cas que les styles du theme parents possede un niveau de specifi
 
 .eventsPreview, .eventsMain {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: space-evenly; }
+  flex-flow: row nowrap;
+  justify-content: space-around; }
+.eventsMain {
+  flex-flow: row wrap; }
 
 .event-card, .event-card-main {
   box-shadow: 0px 8px 10px 5px lightgrey;
@@ -177,10 +179,11 @@ Dans l'eventual cas que les styles du theme parents possede un niveau de specifi
   margin: 15px;
   object-fit: contain;
   width: 400px;
-  flex: 0 0 45%; }
+  flex: 0 0 auto; }
   .event-card-main, .event-card-main-main {
     height: 600px;
-    width: 800px; }
+    width: 800px;
+    flex: 0 0 45%; }
   .event-card .eventTitleContainer, .event-card .eventTitleContainer-main, .event-card-main .eventTitleContainer, .event-card-main .eventTitleContainer-main {
     background-color: limegreen;
     height: 80px;
@@ -209,15 +212,15 @@ Dans l'eventual cas que les styles du theme parents possede un niveau de specifi
   .host__title {
     margin: 0; }
   .host-visual {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
     box-sizing: border-box;
     overflow: hidden;
     border-radius: 50%;
     margin: auto; }
     .host-visual__image {
-      object-fit: contain;
+      object-fit: cover;
       height: 100%; }
   .host__name {
     margin: 10px 0 0; }
@@ -249,7 +252,7 @@ Dans l'eventual cas que les styles du theme parents possede un niveau de specifi
     width: 90%; }
   .event-CTA__button, .event-CTA-main__button {
     display: block;
-    margin-top: 10px; }
+    margin: auto; }
   .event-CTA-main, .event-CTA-main-main {
     height: 240px; }
     .event-CTA-main .event-CTA__button, .event-CTA-main-main .event-CTA__button {

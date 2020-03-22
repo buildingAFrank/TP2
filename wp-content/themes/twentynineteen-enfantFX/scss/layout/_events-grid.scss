@@ -12,9 +12,13 @@ $card-width:400px;
 .events{
   &Preview, &Main{
     display: flex;
-    flex-flow: row wrap;
-    justify-content: space-evenly;
+    flex-flow: row nowrap;
+    justify-content: space-around;
   }
+  &Main{
+    flex-flow: row wrap;
+}
+
 
 
 }
@@ -28,11 +32,12 @@ $card-width:400px;
       margin: 15px;
       object-fit: contain;
       width: $card-width;
-      flex:0 0 45%;
+      flex:0 0 auto;
 
       &-main{
         height: $card-height * 1.5;
         width: $card-width * 2;
+        flex:0 0 45%;
       }
 
       .eventTitleContainer{
@@ -74,14 +79,14 @@ $card-width:400px;
     margin: 0;
   }
   &-visual{
-    width: 80px;height: 80px;
+    width: 100px;height: 100px;
     object-fit: contain;
     box-sizing: border-box;
     overflow: hidden;
     border-radius: 50%;
     margin: auto;
     &__image{
-      object-fit:  contain;
+      object-fit:  cover;
       height: 100%;
     }
   }
@@ -127,7 +132,8 @@ $card-width:400px;
   }
   &__button{
     display: block;
-    margin-top: 10px;
+    margin:auto;
+
   }
   &-main{
     height: $card-height * .6;

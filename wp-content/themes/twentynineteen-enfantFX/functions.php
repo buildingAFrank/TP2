@@ -10,8 +10,8 @@ function enregistrement_du_menu(){
             'primary'=>__('Menu Principal')
         )
     );
-
 }
 
-
 add_action('init','enregistrement_du_menu');
+
+
