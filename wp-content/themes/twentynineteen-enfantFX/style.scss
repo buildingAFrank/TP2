@@ -13,5 +13,16 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
 
+/*
+N.B.
+################################################################################################################
+Dans l'eventual cas que les styles du theme parents possede un niveau de specificiter superieur au style qui suit,
+ ajouter des "& " aux elements des classes problematiques pour obtenir presceance sur le theme parents.
+  sinon pour le moment, toutes les classes sont declarers au premier niveau pour reduire le volume du fichier
+  #############################################################################################################
+
+
+*/
+
 @import "scss/layout/exports",
         "scss/base/exports";

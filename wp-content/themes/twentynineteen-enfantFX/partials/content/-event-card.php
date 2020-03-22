@@ -1,41 +1,51 @@
 <?php
 
+$class='-main';
 // below text excerpt operations taken from https://developer.wordpress.org/reference/functions/get_the_excerpt/#comment-3320
 $excerpt = get_the_excerpt();
-$excerpt = substr($excerpt, 0, 25);
+if(is_home()){
+    $class='';
+    $excerpt = substr($excerpt, 0, 75);
+}else{
+    $excerpt = substr($excerpt, 0, 125);
+}
+
 $result = substr($excerpt, 0, strrpos($excerpt, ' '));
 
-echo '
-<div class="eventCard">
-            <div class="eventTitleContainer">
-                <h3 class="eventTitle">'.get_the_title().'</h3>
-</div>
 
-<div class="eventGlance">
-    <div class="glanceLocation">
-        <h4 class="eventHostTitle">Responsable</h4>
-        <div class="eventVisual">
-            <img src="https://placekitten.com/200/200" alt="" class="eventImage">
+
+
+echo '
+    <div class="event-card'.$class.'">
+        <div class="eventTitleContainer'.$class.'">
+            <h3 class="eventTitle">'.get_the_title().'</h3>
         </div>
-        <h6 class="eventHostName">
-            '.get_the_author().'
-        </h6>
-    </div>
-    <div class="info">
-        <div class="dateInfo">
-            <h4 class="dateTitle">Date</h4>
-            <p class="date">'. get_the_date() .'</p>
+        <div class="event-glance'.$class.'">
+            <div class="host">
+                <h4 class="host__title">Responsable</h4>
+                <div class="host-visual">
+                    <img src="https://placekitten.com/200/200" alt="" class="host-visual__image">
+                </div>
+                <h6 class="host__name">
+                '.get_the_author().'
+                </h6>
+            </div>
+            <div class="info">
+                <div class="info-date">
+                    <h4 class="info-date__title">Date</h4>
+                    <p class="info-date__date">'. get_the_date() .'</p>
+                </div>
+                <div class="info-duration">
+                    <h4 class="info-duration__title">Duree</h4>
+                    <p class="info-duration__time">'.get_post_meta($post->ID, 'duree', true).'</p>
+                </div>
+            </div>
         </div>
-        <div class="durationInfo">
-            <h4 class="durationTitle">Duree</h4>
-            <p class="durationTime">2 heures 30 min</p>
+        <div class="event-CTA'.$class.'">
+            <p class="event-CTA__legend">
+            '.$result.'[...]
+            </p>
+            <input type="button" value="Participer" class="event-CTA__button button__event button__tickets">
         </div>
-    </div>
-</div>
-<div class="eventCTA">
-    <p class="eventLegend">
-        '.$result.'
-    </p>
-    <input type="button" value="Participer" class="button button__event button__tickets">
-</div>
-</div>';
+    </div>'
+;

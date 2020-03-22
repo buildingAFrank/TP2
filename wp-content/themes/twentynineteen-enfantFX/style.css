@@ -11,9 +11,18 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
+/*
+N.B.
+################################################################################################################
+Dans l'eventual cas que les styles du theme parents possede un niveau de specificiter superieur au style qui suit,
+ ajouter des "& " aux elements des classes problematiques pour obtenir presceance sur le theme parents.
+  sinon pour le moment, toutes les classes sont declarers au premier niveau pour reduire le volume du fichier
+  #############################################################################################################
+
+
+*/
 .siteLogo {
-  width: 70px;
-}
+  width: 70px; }
 
 .menu {
   position: absolute;
@@ -25,26 +34,22 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   height: 70px;
   width: 100%;
   height: 70px;
-  width: 100%;
-}
-.menu .menu-navigation {
-  display: flex;
-  justify-content: flex-end;
-  list-style: none;
-  display: flex;
-  height: 70px;
-  width: 100%;
-  justify-content: flex-end;
-  align-items: center;
-}
-.menu .menu-navigation li {
-  margin: 0 10px;
-}
-.menu .menu-navigation li a {
-  padding: 36px 0 0;
-  text-decoration: none;
-  color: white;
-}
+  width: 100%; }
+  .menu .menu-navigation {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    display: flex;
+    height: 70px;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center; }
+    .menu .menu-navigation li {
+      margin: 0 10px; }
+      .menu .menu-navigation li a {
+        padding: 36px 0 0;
+        text-decoration: none;
+        color: white; }
 
 .hero {
   background-image: url(https://placekitten.com/1900/470);
@@ -52,190 +57,208 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 470px;
-}
-.hero .hero__content {
-  width: 100%;
-  height: inherit;
-  display: flex;
-  flex-flow: column wrap;
-  justify-content: center;
-  align-content: center;
-}
-.hero .hero__content .hero__title {
-  color: green;
-  text-align: center;
-  margin: 0;
-}
-.hero .hero__content .hero__title:before {
-  background: none;
-  content: "";
-  display: none;
-}
-.hero .hero__content .hero__text {
-  text-align: center;
-  font-size: 1.2em;
-  color: white;
-  font-weight: 600;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-  padding-right: 15px;
-  padding-left: 15px;
-}
-.hero .hero__content .hero__cta {
-  margin: 0 auto;
-  max-width: 250px;
-}
+  height: 470px; }
+  .hero .hero__content {
+    width: 100%;
+    height: inherit;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center; }
+    .hero .hero__content .hero__title {
+      color: green;
+      text-align: center;
+      margin: 0; }
+      .hero .hero__content .hero__title:before {
+        background: none;
+        content: "";
+        display: none; }
+    .hero .hero__content .hero__text {
+      text-align: center;
+      font-size: 1.2em;
+      color: white;
+      font-weight: 600;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+      padding-right: 15px;
+      padding-left: 15px; }
+    .hero .hero__content .hero__cta {
+      margin: 0 auto;
+      max-width: 250px; }
 
 .eventCalendar {
   margin-top: 50px;
   width: 100%;
-  height: auto;
-}
-.eventCalendar .calendarHeader {
-  text-align: center;
-  font-size: 1.2em;
-}
-.eventCalendar .calendarGrid {
-  border-radius: 10px;
-  box-shadow: inset 0 0 10px grey;
-  width: 80%;
-  margin: 5px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(31, 1fr);
-  grid-gap: 10px 10px;
-  margin: auto;
-}
+  height: auto; }
+  .eventCalendar .calendarHeader {
+    text-align: center;
+    font-size: 1.2em; }
+  .eventCalendar .calendarGrid {
+    border-radius: 10px;
+    box-shadow: inset 0 0 10px grey;
+    width: 80%;
+    margin: 5px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(31, 1fr);
+    grid-gap: 10px 10px;
+    margin: auto; }
 
 .eventDay {
   box-shadow: 0px 0px 5px 0px lightgrey;
   border-radius: 10px;
-  text-align: center;
-}
-.newsRecap {
-  margin-top: 50px;
-}
-.newsRecap .recapHeader {
-  text-align: center;
-  padding-bottom: 15px;
-}
+  text-align: center; }
+
+.newsSection {
+  margin-top: 50px; }
+  .newsSection .recapHeader {
+    text-align: center;
+    padding-bottom: 15px; }
 
 .recapContainer {
   display: flex;
   flex-flow: row nowrap;
   justify-content: center;
-}
-.recapContainer .recap {
-  margin: 0 10px;
-}
-.eventPreview {
+  margin: auto;
+  width: 90%; }
+
+.recap {
+  display: flex;
+  flex: 0 0 33%;
+  flex-flow: column nowrap;
+  height: fit-content;
+  margin: 0 10px; }
+  .recap .recapDetails {
+    box-sizing: border-box;
+    flex: 0 0 50%;
+    margin-left: 10px; }
+    .recap .recapDetails .recapTitle {
+      border-left: 5px solid #90ee90;
+      box-sizing: border-box;
+      font-size: 1.4em;
+      line-height: 1.4em;
+      height: 2.8em;
+      margin: 0;
+      text-align: left; }
+    .recap .recapDetails .recapAuteur {
+      border-left: 5px solid #b0eeba;
+      display: inline; }
+    .recap .recapDetails .recapDate {
+      color: #add8e6;
+      border-bottom: 2px solid #b1c9e6;
+      font-size: .9em;
+      margin-left: 30px;
+      width: 50px; }
+  .recap .recapText {
+    flex: 0 0 45%;
+    margin: 0 10px;
+    text-align: left; }
+  .recap .newsLink {
+    display: block;
+    flex: 0 0 10%;
+    text-align: right; }
+  .recap:nth-child(2) {
+    border-left: 2px grey solid;
+    border-right: 2px solid grey; }
+    .recap:nth-child(2) .newsLink {
+      margin-right: 10px; }
+
+.eventsTitle {
+  text-align: center; }
+
+.eventsPreview, .eventsMain {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-evenly;
-}
+  justify-content: space-evenly; }
 
-.eventCard {
-  width: 400px;
+.event-card, .event-card-main {
+  box-shadow: 0px 8px 10px 5px lightgrey;
+  box-sizing: border-box;
   height: 400px;
   margin: 15px;
-  box-shadow: 0px 8px 10px 5px lightgrey;
   object-fit: contain;
-  box-sizing: border-box;
-}
+  width: 400px;
+  flex: 0 0 45%; }
+  .event-card-main, .event-card-main-main {
+    height: 600px;
+    width: 800px; }
+  .event-card .eventTitleContainer, .event-card .eventTitleContainer-main, .event-card-main .eventTitleContainer, .event-card-main .eventTitleContainer-main {
+    background-color: limegreen;
+    height: 80px;
+    width: 100%; }
+    .event-card .eventTitleContainer .eventTitle, .event-card .eventTitleContainer-main .eventTitle, .event-card-main .eventTitleContainer .eventTitle, .event-card-main .eventTitleContainer-main .eventTitle {
+      color: white;
+      font-size: 1.2em;
+      line-height: 1.2em;
+      margin: 0;
+      margin-left: 10px;
+      padding-left: 5px; }
 
-.eventTitleContainer {
-  background-color: limegreen;
-  height: 30px;
-  width: 100%;
-}
-
-.eventTitleContainer .eventTitle {
-  margin: 0;
-  margin-left: 10px;
-  color: white;
-  font-size: 1.2em;
-  line-height: 1.2em;
-  padding-left: 5px;
-}
-
-.eventGlance {
-  width: 100%;
+.event-glance, .event-glance-main {
   display: flex;
-  height: 170px;
-}
+  height: 160px;
+  width: 100%; }
+.event-glance-main {
+  height: 240px; }
 
-.eventHostTitle {
-  margin: 0;
-}
-
-.eventHostName {
-  margin: 10px 0 0;
-}
-
-.glanceLocation {
+.host {
   flex: 0 1 50%;
   text-align: center;
   box-sizing: border-box;
   object-fit: contain;
-  padding: 0 6.25%;
-}
-
-.eventVisual {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
-  box-sizing: border-box;
-  overflow: hidden;
-  border-radius: 50%;
-  margin: auto;
-}
-
-.eventImage {
-  object-fit: contain;
-  height: 100%;
-}
+  padding: 0 6.25%; }
+  .host__title {
+    margin: 0; }
+  .host-visual {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: auto; }
+    .host-visual__image {
+      object-fit: contain;
+      height: 100%; }
+  .host__name {
+    margin: 10px 0 0; }
 
 .info {
-  flex: 0 1 50%;
-}
+  flex: 0 1 50%; }
+  .info-date {
+    text-align: center; }
+    .info-date__title {
+      margin: 0; }
+    .info-date__date {
+      margin: 0; }
+  .info-duration {
+    text-align: center; }
+    .info-duration__title {
+      margin: 0; }
+    .info-duration__time {
+      margin: 0; }
 
-.dateInfo {
+.event-CTA, .event-CTA-main {
+  height: 160px;
+  margin-top: 20px;
   text-align: center;
-}
-
-.durationInfo {
-  text-align: center;
-}
-
-.durationTitle {
-  margin: 0;
-}
-
-.durationTime {
-  margin: 0;
-}
-
-.eventLegend {
-  font-size: 1em;
-  padding-top: 15px;
-  max-height: 2em;
-  overflow: hidden;
-}
-
-.eventCTA {
-  width: 100%;
-  text-align: center;
-}
-
-.button {
-  margin-top: 10px;
-}
+  width: 100%; }
+  .event-CTA__legend, .event-CTA-main__legend {
+    display: inline;
+    font-size: 1em;
+    max-height: 2em;
+    width: 90%; }
+  .event-CTA__button, .event-CTA-main__button {
+    display: block;
+    margin-top: 10px; }
+  .event-CTA-main, .event-CTA-main-main {
+    height: 240px; }
+    .event-CTA-main .event-CTA__button, .event-CTA-main-main .event-CTA__button {
+      margin-top: 15px; }
 
 .ateliers-title {
   margin: 0 auto;
   width: 100%;
-  text-align: center;
-}
+  text-align: center; }
 
 .atelier-grid {
   border-radius: 10px;
@@ -246,32 +269,25 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(10, 1fr);
-  margin: auto;
-}
-.atelier-grid .atelier {
-  text-align: center;
-  border: 1px solid black;
-}
-.atelier-grid .atelier-formateur-title {
-  text-align: center;
-  height: auto;
-}
-.atelier-grid .atelier-formateur-title h2 {
-  width: 100%;
-  margin: 0 auto;
-}
-.atelier-grid .atelier-lunch h2 {
-  text-align: center;
-  margin: 0 auto;
-}
-.atelier-grid .atelier-info h5, .atelier-grid .atelier-info p {
-  margin: 0;
-}
+  margin: auto; }
+  .atelier-grid .atelier {
+    text-align: center;
+    border: 1px solid black; }
+  .atelier-grid .atelier-formateur-title {
+    text-align: center;
+    height: auto; }
+    .atelier-grid .atelier-formateur-title h2 {
+      width: 100%;
+      margin: 0 auto; }
+  .atelier-grid .atelier-lunch h2 {
+    text-align: center;
+    margin: 0 auto; }
+  .atelier-grid .atelier-info h5, .atelier-grid .atelier-info p {
+    margin: 0; }
 
 h1:before, h2:before, h3:before, h4:before, h5:before, h6:before {
   background: none;
   content: "";
-  display: none;
-}
+  display: none; }
 
 /*# sourceMappingURL=style.css.map */

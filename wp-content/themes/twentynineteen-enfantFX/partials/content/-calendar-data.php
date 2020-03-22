@@ -12,6 +12,6 @@ echo "<div class=\"eventDay\" style='grid-column: ".($gridCol+1)."/span 1;grid-r
 
 
 
-            echo the_field('date_evenement')."</p>
+            echo "</p>
             </div>
         </div>";

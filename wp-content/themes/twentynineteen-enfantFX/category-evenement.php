@@ -4,6 +4,7 @@ get_header();
 get_template_part('partials/content/','hero-banner');
 
 ?>
+
 <main class="main-content">
 
     <?php
@@ -18,7 +19,7 @@ get_template_part('partials/content/','hero-banner');
     if($query1->have_posts()){
         echo '<section>
         <h2>prochains evenements</h2>
-        <div class="eventPreview">';
+        <div class="eventsMain">';
         while ($query1->have_posts()):
             $query1->the_post();
 
