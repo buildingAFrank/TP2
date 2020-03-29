@@ -6,15 +6,18 @@ echo"
             <h1 class=\"hero__title\">";
             if(is_home()){
                 echo"Accueil";
-            } else{
-               echo get_the_category()[0]->name;
+            } else {
+               wp_title('');
             }
             echo "</h1>
             <p class=\"hero__text\">";
             if(is_home()){
     echo"Bienvenue sur le site";
-} else{
-    echo get_the_category()[0]->category_description;
+} else if( is_category( )) {
+             echo   get_the_category()[0]->category_description;
+            }
+            else {
+
 }
 echo"</p>
             <input type=\"button\" class=\"hero__cta\" value=\"Call To Action\">

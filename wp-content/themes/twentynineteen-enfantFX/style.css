@@ -36,20 +36,56 @@ Dans l'eventual cas que les styles du theme parents possede un niveau de specifi
   height: 70px;
   width: 100%; }
   .menu .menu-navigation {
+    margin: 0;
     display: flex;
     justify-content: flex-end;
     list-style: none;
-    display: flex;
     height: 70px;
     width: 100%;
     justify-content: flex-end;
     align-items: center; }
     .menu .menu-navigation li {
-      margin: 0 10px; }
+      height: inherit;
+      text-align: center;
+      margin: 0;
+      padding: 0 10px;
+      background-color: transparent;
+      transition: background-color 750ms linear; }
+      .menu .menu-navigation li:hover {
+        background-color: black; }
       .menu .menu-navigation li a {
-        padding: 36px 0 0;
+        display: inline-block;
+        vertical-align: bottom;
+        line-height: 100px;
+        bottom: 0px;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+        height: inherit;
         text-decoration: none;
         color: white; }
+        .menu .menu-navigation li a:focus {
+          outline: 0px; }
+    @media screen and (min-width: 320px) and (max-width: 719px) {
+      .menu .menu-navigation {
+        display: none; } }
+  .menu label[for="burger"] {
+    display: none;
+    font-size: 40px;
+    padding: 5px 0 5px 10px;
+    cursor: pointer; }
+    @media screen and (min-width: 320px) and (max-width: 719px) {
+      .menu label[for="burger"] {
+        display: block; } }
+  .menu #burger {
+    display: none; }
+  .menu #burger:checked ~ .menu-menu-principal-container > .menu-navigation {
+    display: flex;
+    flex-flow: row wrap; }
+    .menu #burger:checked ~ .menu-menu-principal-container > .menu-navigation .menu-item {
+      display: block;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.8); }
 
 .hero {
   background-image: url(https://placekitten.com/1900/470);
@@ -91,17 +127,18 @@ Dans l'eventual cas que les styles du theme parents possede un niveau de specifi
   height: auto; }
   .eventCalendar .calendarHeader {
     text-align: center;
-    font-size: 1.2em; }
-  .eventCalendar .calendarGrid {
-    border-radius: 10px;
-    box-shadow: inset 0 0 10px grey;
-    width: 80%;
-    margin: 5px;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(31, 1fr);
-    grid-gap: 10px 10px;
-    margin: auto; }
+    font-size: 1.6em; }
+
+.calendarGrid {
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px grey;
+  width: 80%;
+  margin: 5px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(31, 1fr);
+  grid-gap: 10px 10px;
+  margin: auto; }
 
 .eventDay {
   box-shadow: 0px 0px 5px 0px lightgrey;
@@ -109,10 +146,12 @@ Dans l'eventual cas que les styles du theme parents possede un niveau de specifi
   text-align: center; }
 
 .newsSection {
-  margin-top: 50px; }
+  margin-top: 50px;
+  width: 100%;
+  height: auto; }
   .newsSection .recapHeader {
     text-align: center;
-    padding-bottom: 15px; }
+    font-size: 1.6em; }
 
 .recapContainer {
   display: flex;
@@ -162,8 +201,13 @@ Dans l'eventual cas que les styles du theme parents possede un niveau de specifi
     .recap:nth-child(2) .newsLink {
       margin-right: 10px; }
 
-.eventsTitle {
-  text-align: center; }
+.eventsSection {
+  margin-top: 50px;
+  width: 100%;
+  height: auto; }
+  .eventsSection .eventsTitle {
+    text-align: center;
+    font-size: 1.6em; }
 
 .eventsPreview, .eventsMain {
   display: flex;
@@ -287,6 +331,50 @@ Dans l'eventual cas que les styles du theme parents possede un niveau de specifi
     margin: 0 auto; }
   .atelier-grid .atelier-info h5, .atelier-grid .atelier-info p {
     margin: 0; }
+
+footer {
+  background-color: #d3d3d3;
+  box-shadow: 0 10px 15px 5px #888888 inset;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+  height: 300px;
+  margin-top: 20px;
+  padding: 20px 0; }
+  footer .footer-logo-visual {
+    border-radius: 15%;
+    box-sizing: border-box;
+    overflow: hidden;
+    height: 100px;
+    object-fit: contain;
+    width: 100px;
+    max-width: 100px;
+    flex: 0 0 50%;
+    margin: auto; }
+    footer .footer-logo-visual .logo-image {
+      object-fit: contain;
+      height: 100%; }
+  footer .localization {
+    flex: 0 0 50%; }
+  footer .contact {
+    flex: 0 0 100%; }
+    footer .contact form {
+      width: 90%;
+      margin: auto;
+      text-align: center; }
+    footer .contact input[type="text"] {
+      width: 60%;
+      border-radius: 5px; }
+    footer .contact input[type="button"] {
+      margin-left: 10px;
+      border-radius: 5px; }
+  footer .networking {
+    width: 100%;
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: space-evenly; }
+    footer .networking a {
+      tex-decoration: none; }
 
 h1:before, h2:before, h3:before, h4:before, h5:before, h6:before {
   background: none;

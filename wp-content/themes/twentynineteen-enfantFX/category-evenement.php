@@ -1,7 +1,6 @@
 <?php
-get_header();
 
-get_template_part('partials/content/','hero-banner');
+get_header();
 
 ?>
 
@@ -17,12 +16,11 @@ get_template_part('partials/content/','hero-banner');
     );
     $query1= new WP_Query($args);
     if($query1->have_posts()){
-        echo '<section>
-        <h2>prochains evenements</h2>
+        echo '<section class="eventsSection">
+        <h2 class="eventsTitle">prochains événements</h2>
         <div class="eventsMain">';
         while ($query1->have_posts()):
             $query1->the_post();
-
             get_template_part('partials/content/','event-card');
         endwhile;
         wp_reset_query();

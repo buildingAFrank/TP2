@@ -3,7 +3,7 @@
 $class='-main';
 
 
-$authorImg=get_wp_user_avatar_src("","original");
+$authorImg=get_wp_user_avatar_src(get_the_author_meta('ID'),"original");
 
 $excerpt = get_the_excerpt();
 if(is_home()){
@@ -14,7 +14,7 @@ if(is_home()){
 }
 $result = substr($excerpt, 0, strrpos($excerpt, ' '));
 
-
+$time= strtotime(get_field('date-evenement',$post->ID));
 
 echo '
     <div class="event-card'.$class.'">
@@ -34,7 +34,7 @@ echo '
             <div class="info">
                 <div class="info-date">
                     <h4 class="info-date__title">Date</h4>
-                    <p class="info-date__date">'. get_the_date() .'</p>
+                    <p class="info-date__date">'. (date('d/m',$time)) .'</p>
                 </div>
                 <div class="info-duration">
                     <h4 class="info-duration__title">Duree</h4>

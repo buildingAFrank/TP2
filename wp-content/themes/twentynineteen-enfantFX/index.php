@@ -1,9 +1,13 @@
 <?php
   /*Main Template Files*/
-    get_header();
+
+get_header();
+
 ?>
 
 <section class="main-content">
+
+    <h4>You landed here</h4>
     <h1><?php echo get_the_title(); ?></h1>
         <?php
             //start the loop
@@ -20,6 +24,6 @@
 
 
 <?php
-    get_footer();
+
 
 ?>

@@ -1,13 +1,6 @@
-$card-height:400px;
-$card-width:400px;
 
-.eventsSection{
 
-}
-
-.eventsTitle{
-  text-align: center;
-}
+@include sousTitreSection(eventsSection,eventsTitle);
 
 .events{
   &Preview, &Main{

@@ -1,0 +1,54 @@
+footer{
+  background-color: #d3d3d3;
+  box-shadow: 0 10px 15px 5px #888888 inset;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row wrap;
+  height: 300px;
+  margin-top: 20px;
+  padding: 20px 0;
+  .footer-logo-visual{
+    border-radius: 15%;
+    box-sizing: border-box;
+    overflow: hidden;
+    height: 100px;
+    object-fit: contain;
+    width: 100px;
+    max-width: 100px;
+    flex: 0 0 50%;
+    margin: auto;
+
+    .logo-image{
+      object-fit: contain;
+      height: 100%;
+    }
+  }
+  .localization{
+    flex:0 0 50%;
+  }
+  .contact{
+    flex: 0 0 100%;
+    form{
+      width: 90%;
+      margin: auto;
+      text-align: center;
+    }
+    input[type="text"]{
+      width: 60%;
+      border-radius: 5px;
+    }
+    input[type="button"]{
+      margin-left: 10px;
+      border-radius: 5px;
+    }
+  }
+  .networking{
+    width: 100%;
+    flex: 0 0 100%;
+    display: flex;
+    justify-content: space-evenly;
+    a{
+      tex-decoration: none;
+    }
+  }
+}

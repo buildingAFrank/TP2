@@ -1,11 +1,6 @@
 
-.newsSection{
-  margin-top: 50px;
-  .recapHeader{
-    text-align: center;
-    padding-bottom: 15px;
-  }
-}
+
+@include sousTitreSection(newsSection,recapHeader);
 
 .recapContainer {
   display: flex;

@@ -12,6 +12,11 @@ function enregistrement_du_menu(){
     );
 }
 
+function fx_charger_banniere(){
+    get_template_part('partials/content/','hero-banner');
+}
+
+
 add_action('init','enregistrement_du_menu');
 
-
+add_action('__after_header','fx_charger_banniere');

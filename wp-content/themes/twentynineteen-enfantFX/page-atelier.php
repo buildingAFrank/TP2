@@ -2,11 +2,7 @@
 
 get_header();
 
-
-get_template_part('partials/content/','hero-banner');
-
 ?>
-
 
     <main class="main-content">
 

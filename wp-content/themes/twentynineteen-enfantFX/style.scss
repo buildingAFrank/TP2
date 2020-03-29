@@ -24,5 +24,6 @@ Dans l'eventual cas que les styles du theme parents possede un niveau de specifi
 
 */
 
-@import "scss/layout/exports",
+@import "scss/utils/exports",
+        "scss/layout/exports",
         "scss/base/exports";
