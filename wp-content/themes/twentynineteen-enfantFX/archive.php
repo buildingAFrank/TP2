@@ -12,7 +12,7 @@ $args=array(
 
 ?>
 
-    <section class="main-content">
+    <section class="main-archive-content">
         <?php
         $query1= new WP_Query($args);
         if($query1->have_posts()) {

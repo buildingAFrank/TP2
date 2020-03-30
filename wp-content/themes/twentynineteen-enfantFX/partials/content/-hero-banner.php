@@ -10,6 +10,7 @@ echo"
                wp_title('');
             }
             echo "</h1>
+            <span class='titleAnim'></span>
             <p class=\"hero__text\">";
             if(is_home()){
     echo"Bienvenue sur le site";
@@ -20,7 +21,7 @@ echo"
 
 }
 echo"</p>
-            <input type=\"button\" class=\"hero__cta\" value=\"Call To Action\">
+            <input type=\"button\" class=\"hero__cta animation-bouton\" value=\"Call To Action\">
         </div>
     </div>
     

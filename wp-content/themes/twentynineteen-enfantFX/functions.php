@@ -7,7 +7,7 @@ function my_theme_enqueue_styles(){
 function enregistrement_du_menu(){
     register_nav_menus(
         array(
-            'primary'=>__('Menu Principal')
+            'primary'=>'Menu Principal'
         )
     );
 }

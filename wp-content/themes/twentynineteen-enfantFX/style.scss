@@ -2,6 +2,7 @@
 Theme Name: theme enfant twentyNineteen
 Template:twentynineteen
 
+
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
@@ -25,5 +26,6 @@ Dans l'eventual cas que les styles du theme parents possede un niveau de specifi
 */
 
 @import "scss/utils/exports",
-        "scss/layout/exports",
-        "scss/base/exports";
+        "scss/base/exports",
+        "scss/components/exports",
+        "scss/layout/exports";

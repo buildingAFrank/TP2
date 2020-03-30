@@ -1,0 +1,10 @@
+input[type="button"].animation-bouton{
+  background: linear-gradient(30deg, $black, $date-blue-highlight, $light-grey, $date-blue-highlight, $black );
+  background-size: 400% 400%;
+  background-position: 0% 50%;
+  color: $white;
+  &:hover{
+    animation: gradient 5s ease infinite;
+  }
+
+}

@@ -34,6 +34,12 @@ get_header();
 
     ?>
 
+    <h3>Notre atelier le plus aprecier de l'annee</h3>
+    <?php
+
+    get_template_part('partials/content/','animation');
+    ?>
+
 
     <!--    ajout de la section nouvelles-->
     <?php
@@ -66,11 +72,21 @@ get_header();
 
 <?php
     //start the loop
+$today = date('Ymd');
     $args=array(
             'category_name' => 'evenement',
             'posts_per_page'=> 3,
-            'orderby'=>'date',
-            'order'=>'DESC'
+            'meta_key'      =>'date-evenement',
+            'orderby'       => 'meta_value_num',
+            'order'         => 'ASC',
+            'meta_query'    =>array(
+                        array(
+                                'key'       =>'date-evenement',
+                                'compare'   =>'>=',
+                                'value'     => $today
+                        )
+            )
+
     );
     $query1= new WP_Query($args);
     if($query1->have_posts()){

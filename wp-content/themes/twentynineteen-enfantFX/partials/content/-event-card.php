@@ -38,7 +38,7 @@ echo '
                 </div>
                 <div class="info-duration">
                     <h4 class="info-duration__title">Duree</h4>
-                    <p class="info-duration__time">'.get_post_meta($post->ID, 'duree', true).'</p>
+                    <p class="info-duration__time">'.get_field('duree-evenement',$post->ID).'</p>
                 </div>
             </div>
         </div>

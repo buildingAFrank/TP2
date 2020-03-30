@@ -2,6 +2,7 @@
 Theme Name: theme enfant twentyNineteen
 Template:twentynineteen
 
+
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 
@@ -21,18 +22,51 @@ Dans l'eventual cas que les styles du theme parents possede un niveau de specifi
 
 
 */
+/*All theme custom colors*/
+/* header and nav vars*/
+/* footer vars */
+/* heroBanner vars*/
+/*events grid vars*/
+h1:before, h2:before, h3:before, h4:before, h5:before, h6:before {
+  background: none;
+  content: "";
+  display: none; }
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+    color: #ffffff; }
+  25% {
+    background-position: 100% 100%;
+    color: #000000; }
+  50% {
+    background-position: 100% 50%;
+    color: #ffffff; }
+  75% {
+    background-position: 100% 100%;
+    color: #000000; }
+  100% {
+    background-position: 0% 50%;
+    color: #ffffff; } }
+input[type="button"].animation-bouton {
+  background: linear-gradient(30deg, #000000, #b1c9e6, #d4d4d4, #b1c9e6, #000000);
+  background-size: 400% 400%;
+  background-position: 0% 50%;
+  color: #ffffff; }
+  input[type="button"].animation-bouton:hover {
+    animation: gradient 5s ease infinite; }
+
 .siteLogo {
-  width: 70px; }
+  width: 70px;
+  height: 70px; }
 
 .menu {
   position: absolute;
   z-index: 5;
   background-color: rgba(0, 0, 0, 0.2);
-  color: white;
+  color: #ffffff;
   display: flex;
   flex-flow: row nowrap;
-  height: 70px;
-  width: 100%;
   height: 70px;
   width: 100%; }
   .menu .menu-navigation {
@@ -42,7 +76,6 @@ Dans l'eventual cas que les styles du theme parents possede un niveau de specifi
     list-style: none;
     height: 70px;
     width: 100%;
-    justify-content: flex-end;
     align-items: center; }
     .menu .menu-navigation li {
       height: inherit;
@@ -50,9 +83,9 @@ Dans l'eventual cas que les styles du theme parents possede un niveau de specifi
       margin: 0;
       padding: 0 10px;
       background-color: transparent;
-      transition: background-color 750ms linear; }
+      transition: background-color 500ms linear; }
       .menu .menu-navigation li:hover {
-        background-color: black; }
+        background-color: #000000; }
       .menu .menu-navigation li a {
         display: inline-block;
         vertical-align: bottom;
@@ -63,7 +96,11 @@ Dans l'eventual cas que les styles du theme parents possede un niveau de specifi
         text-align: center;
         height: inherit;
         text-decoration: none;
-        color: white; }
+        color: #ffffff;
+        border: 0px transparent solid;
+        transition: border 250ms linear; }
+        .menu .menu-navigation li a:hover {
+          border-bottom: 4px #ffffff solid; }
         .menu .menu-navigation li a:focus {
           outline: 0px; }
     @media screen and (min-width: 320px) and (max-width: 719px) {
@@ -102,19 +139,24 @@ Dans l'eventual cas que les styles du theme parents possede un niveau de specifi
     justify-content: center;
     align-content: center; }
     .hero .hero__content .hero__title {
-      color: green;
+      color: #2a672b;
       text-align: center;
       margin: 0; }
       .hero .hero__content .hero__title:before {
         background: none;
         content: "";
         display: none; }
+    .hero .hero__content .titleAnim {
+      background-color: #ffffff;
+      height: 2px;
+      width: 2px;
+      display: none; }
     .hero .hero__content .hero__text {
       text-align: center;
       font-size: 1.2em;
-      color: white;
+      color: #ffffff;
       font-weight: 600;
-      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+      background-color: rgba(0, 0, 0, 0.4);
       padding-right: 15px;
       padding-left: 15px; }
     .hero .hero__content .hero__cta {
@@ -133,7 +175,6 @@ Dans l'eventual cas que les styles du theme parents possede un niveau de specifi
   border-radius: 10px;
   box-shadow: inset 0 0 10px grey;
   width: 80%;
-  margin: 5px;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(31, 1fr);
@@ -160,6 +201,12 @@ Dans l'eventual cas que les styles du theme parents possede un niveau de specifi
   margin: auto;
   width: 90%; }
 
+.newsMain {
+  display: flex;
+  flex-flow: row wrap; }
+  .newsMain .recap {
+    flex: 0 0 45%; }
+
 .recap {
   display: flex;
   flex: 0 0 33%;
@@ -171,7 +218,7 @@ Dans l'eventual cas que les styles du theme parents possede un niveau de specifi
     flex: 0 0 50%;
     margin-left: 10px; }
     .recap .recapDetails .recapTitle {
-      border-left: 5px solid #90ee90;
+      border-left: 5px solid #b0eeba;
       box-sizing: border-box;
       font-size: 1.4em;
       line-height: 1.4em;
@@ -192,14 +239,21 @@ Dans l'eventual cas que les styles du theme parents possede un niveau de specifi
     margin: 0 10px;
     text-align: left; }
   .recap .newsLink {
-    display: block;
+    display: inline-block;
     flex: 0 0 10%;
-    text-align: right; }
-  .recap:nth-child(2) {
-    border-left: 2px grey solid;
-    border-right: 2px solid grey; }
-    .recap:nth-child(2) .newsLink {
-      margin-right: 10px; }
+    text-align: center;
+    color: #2e77be;
+    width: 25%;
+    margin-left: 75%; }
+    .recap .newsLink:focus {
+      outline: 0px;
+      color: #000000; }
+
+.recapContainer .recap:nth-child(2) {
+  border-left: 3px #d4d4d4 solid;
+  border-right: 3px #d4d4d4 solid; }
+  .recapContainer .recap:nth-child(2) .newsLink {
+    margin-right: 10px; }
 
 .eventsSection {
   margin-top: 50px;
@@ -217,33 +271,35 @@ Dans l'eventual cas que les styles du theme parents possede un niveau de specifi
   flex-flow: row wrap; }
 
 .event-card, .event-card-main {
-  box-shadow: 0px 8px 10px 5px lightgrey;
+  box-shadow: 0px 8px 10px 5px #d4d4d4;
   box-sizing: border-box;
   height: 400px;
   margin: 15px;
   object-fit: contain;
   width: 400px;
   flex: 0 0 auto; }
-  .event-card-main, .event-card-main-main {
-    height: 600px;
-    width: 800px;
-    flex: 0 0 45%; }
-  .event-card .eventTitleContainer, .event-card .eventTitleContainer-main, .event-card-main .eventTitleContainer, .event-card-main .eventTitleContainer-main {
-    background-color: limegreen;
+  .event-card .eventTitleContainer, .event-card-main .eventTitleContainer, .event-card .eventTitleContainer-main, .event-card-main .eventTitleContainer-main {
+    background-color: #32cd32;
     height: 80px;
     width: 100%; }
-    .event-card .eventTitleContainer .eventTitle, .event-card .eventTitleContainer-main .eventTitle, .event-card-main .eventTitleContainer .eventTitle, .event-card-main .eventTitleContainer-main .eventTitle {
-      color: white;
+    .event-card .eventTitleContainer .eventTitle, .event-card-main .eventTitleContainer .eventTitle, .event-card .eventTitleContainer-main .eventTitle, .event-card-main .eventTitleContainer-main .eventTitle {
+      color: #ffffff;
       font-size: 1.2em;
       line-height: 1.2em;
       margin: 0;
       margin-left: 10px;
       padding-left: 5px; }
 
+.event-card-main {
+  height: 600px;
+  width: 800px;
+  flex: 0 0 45%; }
+
 .event-glance, .event-glance-main {
   display: flex;
   height: 160px;
   width: 100%; }
+
 .event-glance-main {
   height: 240px; }
 
@@ -273,15 +329,11 @@ Dans l'eventual cas que les styles du theme parents possede un niveau de specifi
   flex: 0 1 50%; }
   .info-date {
     text-align: center; }
-    .info-date__title {
-      margin: 0; }
-    .info-date__date {
+    .info-date__title, .info-date__date {
       margin: 0; }
   .info-duration {
     text-align: center; }
-    .info-duration__title {
-      margin: 0; }
-    .info-duration__time {
+    .info-duration__title, .info-duration__time {
       margin: 0; }
 
 .event-CTA, .event-CTA-main {
@@ -289,18 +341,44 @@ Dans l'eventual cas que les styles du theme parents possede un niveau de specifi
   margin-top: 20px;
   text-align: center;
   width: 100%; }
-  .event-CTA__legend, .event-CTA-main__legend {
+  .event-CTA__legend {
     display: inline;
     font-size: 1em;
     max-height: 2em;
     width: 90%; }
-  .event-CTA__button, .event-CTA-main__button {
+  .event-CTA__button {
     display: block;
     margin: auto; }
-  .event-CTA-main, .event-CTA-main-main {
-    height: 240px; }
-    .event-CTA-main .event-CTA__button, .event-CTA-main-main .event-CTA__button {
-      margin-top: 15px; }
+
+.event-CTA-main {
+  height: 360px; }
+  .event-CTA-main .event-CTA__button {
+    margin-top: 15px; }
+
+.default-category {
+  margin-top: 50px;
+  width: 100%;
+  height: auto; }
+  .default-category .category-header {
+    text-align: center;
+    font-size: 1.6em; }
+
+.postMain {
+  display: flex;
+  flex-flow: row wrap;
+  margin: auto; }
+
+.generic-box {
+  width: 45%;
+  box-sizing: border-box;
+  margin: 0 2.5%; }
+  .generic-box .generic-legend .generic-date {
+    color: #add8e6; }
+  .generic-box .generic-link {
+    display: block;
+    width: 25%;
+    margin-left: 75%;
+    text-align: center; }
 
 .ateliers-title {
   margin: 0 auto;
@@ -374,11 +452,6 @@ footer {
     display: flex;
     justify-content: space-evenly; }
     footer .networking a {
-      tex-decoration: none; }
-
-h1:before, h2:before, h3:before, h4:before, h5:before, h6:before {
-  background: none;
-  content: "";
-  display: none; }
+      text-decoration: none; }
 
 /*# sourceMappingURL=style.css.map */

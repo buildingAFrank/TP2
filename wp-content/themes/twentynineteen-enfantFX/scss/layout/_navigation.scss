@@ -1,0 +1,83 @@
+
+.siteLogo{
+  width: $nav-height;
+  height: $nav-height;
+}
+.menu{
+  position: absolute;
+  z-index: 5;
+  background-color: $black-alpha-down;
+  color: $white;
+  display: flex;
+  flex-flow: row nowrap;
+  height: $nav-height;
+  width: 100%;
+
+
+  .menu-navigation{
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+      list-style: none;
+      height: $nav-height;
+      width: 100%;
+      align-items: center;
+      li{
+        height: inherit;
+        text-align: center;
+        margin: 0;
+        padding: 0 10px;
+        background-color: transparent;
+        transition: background-color 500ms linear;
+        &:hover{
+          background-color: $black;
+        }
+        a{
+          display: inline-block;
+          vertical-align: bottom;
+          line-height: 100px;
+          bottom: 0px;
+          margin: 0 ;
+          width: 100%;
+          text-align: center;
+          height: inherit;
+          text-decoration: none;
+          color: $white;
+          border:0px transparent solid;
+          transition: border 250ms linear;
+          &:hover{
+            border-bottom:4px $white solid;
+          }
+          &:focus{
+            outline: 0px;
+          }
+        }
+      }
+    @media screen and (min-width:320px) and (max-width:719px){
+      display: none;
+    }
+  }
+  label[for="burger"]{
+    display: none;
+    font-size: 40px;
+    padding: 5px 0 5px 10px;
+    cursor: pointer;
+    @media screen and (min-width:320px) and (max-width:719px){
+      display: block;
+    }
+  }
+
+  #burger{
+    display: none;
+  }
+
+  #burger:checked ~ .menu-menu-principal-container> .menu-navigation {
+    display: flex;
+    flex-flow: row wrap;
+    .menu-item{
+      display: block;
+      width: 100%;
+      background-color: rgba(0,0,0, 0.8);
+    }
+  }
+}

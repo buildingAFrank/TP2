@@ -1,0 +1,27 @@
+
+@include sousTitreSection(default-category,category-header);
+
+.postMain{
+  display:flex;
+  flex-flow:row wrap;
+  margin:auto;
+}
+
+.generic-box{
+  width:45%;
+  box-sizing:border-box;
+  margin:0 2.5%;
+
+  .generic-legend{
+    .generic-title{}
+    .generic-author{}
+    .generic-date{color:$blue-dates;}
+  }
+  .generic-text{}
+  .generic-link{
+    display:block;
+    width:25%;
+    margin-left:75%;
+    text-align:center;
+  }
+}

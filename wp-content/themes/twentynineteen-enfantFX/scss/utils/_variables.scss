@@ -1,5 +1,37 @@
 
+//Global
+/*All theme custom colors*/
+$black: #000000;
+$black-alpha-down:rgba($black, .2);
+$white: #ffffff;
+$title-green-highlight:#90ee90;
+$author-green-highlight:#b0eeba;
+$date-blue-highlight:#b1c9e6;
+$blue-dates: #add8e6;
+$blue-links: #2e77be;
+$light-grey:#d4d4d4;
+$header-green: #2a672b;
+$card-title-bg-color:#32cd32;
 
 
+
+/* header and nav vars*/
+$nav-height:70px;
+
+/* footer vars */
+$footer-height:300px;
+
+
+/* heroBanner vars*/
+$banner-height: $nav-height + 400px;
+
+/*events grid vars*/
+
+// on main page
 $card-height:400px;
 $card-width:400px;
+
+// on event page
+
+$main-card-height:$card-height * 1.5;
+$main-card-width:$card-width * 2;
