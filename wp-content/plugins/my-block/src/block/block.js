@@ -12,7 +12,7 @@ import './style.scss';
 const { __ } = wp.i18n; // Import __() from wp.i18n
 const { registerBlockType } = wp.blocks; // Import registerBlockType() from wp.blocks
 const {InspectorControls} = wp.editor;
-const {Panel, PanelBody, PanelRow, PanelDivider, TextControl,ColorPicker } = wp.components;
+const {Panel, PanelBody, PanelRow, SelectControl, TextControl,ColorPicker } = wp.components;
 
 /**
  * Register: aa Gutenberg Block.
@@ -43,12 +43,27 @@ registerBlockType( 'mon-theme/block-fx', {
 			source: 'text',
 			selector:'.titre-ph'
 		},
+		titleAlign:{
+			type:'string',
+			source:'text',
+			selector:'.text-ph'
+		},
 		text:{
 			type:'string',
 			source:'text',
 			selector:'.text-ph'
 		},
 		bgColor:{
+			type:'string',
+			source:'text',
+			selector:'.style-ph'
+		},
+		textAlign:{
+			type:'string',
+			source:'text',
+			selector:'.text-ph'
+		},
+		verticalWidth:{
 			type:'string',
 			source:'text',
 			selector:'.style-ph'
@@ -81,6 +96,17 @@ registerBlockType( 'mon-theme/block-fx', {
 							></TextControl>
 						</PanelRow>
 						<PanelRow>
+							<SelectControl
+								label={'alignement du titre'}
+								options={[
+									{label:'Gauche', value:'left'},
+									{label:'Centrer', value:'center'},
+									{label:'Droite',value:'right'}
+								]}
+								onChange={(e)=>{props.setAttributes({titleAlign:e})}}
+							/>
+						</PanelRow>
+						<PanelRow>
 							<TextControl
 								label={'Texte du block'}
 								help ={'definir le texte du block qui sera afficher'}
@@ -89,20 +115,40 @@ registerBlockType( 'mon-theme/block-fx', {
 							>
 							</TextControl>
 						</PanelRow>
+						<PanelRow>
+							<SelectControl
+								label={'alignement du text'}
+								options={[
+									{label:'Gauche', value:'left'},
+									{label:'Centrer', value:'center'},
+									{label:'Droite',value:'right'}
+									]}
+								onChange={(e)=>{props.setAttributes({textAlign:e})}}
+							/>
+						</PanelRow>
 					</PanelBody>
 					<PanelBody title={"Formattage Visuel"}>
 						<PanelRow>
 							<ColorPicker
+								label={"Couleur d'arriere plan"}
 								color={"#123568"}
 								onChangeComplete={(val)=>props.setAttributes({bgColor:val.hex})}
 							/>
 						</PanelRow>
+						<PanelRow>
+							<TextControl
+								label={'largeur du contenu'}
+								help ={'definir la largeur du conteneur sur la page sur 100'}
+								value={props.attributes.verticalWidth}
+								onChange={(val)=>{props.setAttributes({verticalWidth: val})}}
+							></TextControl>
+						</PanelRow>
 					</PanelBody>
 				</Panel>
 			</InspectorControls>,
-			<div className={[props.className,"style-ph"]} style={{backgroundColor:props.attributes.bgColor, width:'45vw',margin:'auto'}}>
-					<h4 className="titre-ph">{props.attributes.title}</h4>
-				<span className="text-ph">
+			<div className={[props.className,"style-ph"]} style={{backgroundColor:props.attributes.bgColor, width:props.attributes.verticalWidth+'%',margin:'auto',padding:'0 5vw'}}>
+					<h4 className="titre-ph" style={{textAlign:props.attributes.titleAlign}}>{props.attributes.title}</h4>
+				<span className="text-ph" style={{textAlign:props.attributes.textAlign}}>
 					<p>{props.attributes.text}</p>
 				</span>
 			</div>
@@ -123,11 +169,11 @@ registerBlockType( 'mon-theme/block-fx', {
 	save: ( props ) => {
 
 		return (
-			<div className="style-ph" style={{backgroundColor:props.attributes.bgColor , width:'45vw',margin:'auto'}}>
+			<div className="style-ph" style={{backgroundColor:props.attributes.bgColor, width:props.attributes.verticalWidth+'%',margin:'auto',padding:'0 5vw'}}>
 
-					<h4 className="titre-ph">{props.attributes.title}</h4>
+					<h4 className="titre-ph" style={{textAlign:props.attributes.titleAlign}}>{props.attributes.title}</h4>
 
-				<span className="text-ph">
+				<span className="text-ph" style={{textAlign:props.attributes.textAlign}}>
 					<p>{props.attributes.text}</p>
 				</span>
 			</div>
