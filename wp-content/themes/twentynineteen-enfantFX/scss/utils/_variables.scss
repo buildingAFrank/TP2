@@ -17,6 +17,9 @@ $card-title-bg-color:#32cd32;
 
 /* header and nav vars*/
 $nav-height:70px;
+//<975px
+$s-nav-height:100px;
+$s-nav-item-height:50px;
 
 /* footer vars */
 $footer-height:300px;
@@ -32,6 +35,5 @@ $card-height:400px;
 $card-width:400px;
 
 // on event page
-
 $main-card-height:$card-height * 1.5;
 $main-card-width:$card-width * 2;

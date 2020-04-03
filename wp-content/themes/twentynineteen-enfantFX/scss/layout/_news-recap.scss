@@ -1,5 +1,3 @@
-
-
 @include sousTitreSection(newsSection,recapHeader);
 
 .recapContainer {
@@ -34,7 +32,7 @@
         box-sizing:border-box;
         font-size: 1.4em;
         line-height: 1.4em;
-        height:2.8em;
+
         margin: 0;
         text-align: left;
       }
@@ -70,10 +68,25 @@
   }
 
 .recapContainer .recap:nth-child(2){
-  border-left: 3px $light-grey solid;
-  border-right: 3px $light-grey solid;
+  @media screen and(min-width:771px){
+    border-left: 3px $light-grey solid;
+    border-right: 3px $light-grey solid;
+  }
+  @media screen and(max-width:770px){
+    border-top: 3px $light-grey solid;
+    border-bottom: 3px $light-grey solid;
+  }
+
   .newsLink{
     margin-right:10px;
+  }
+}
+@media screen and (max-width: 770px){
+  .recapContainer, .newsMain{
+    flex-flow:row wrap;
+  .recap{
+    flex:0 0 90%;
+  }
   }
 }
 

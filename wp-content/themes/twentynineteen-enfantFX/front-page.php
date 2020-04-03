@@ -34,7 +34,7 @@ get_header();
 
     ?>
 
-    <h3>Notre atelier le plus aprecier de l'annee</h3>
+    <h2 class="recapHeader">Notre atelier le plus apprecier de l'annee</h2>
     <?php
 
     get_template_part('partials/content/','animation');
@@ -95,7 +95,7 @@ $today = date('Ymd');
         <div class="eventsPreview">';
             while ($query1->have_posts()):
                 $query1->the_post();
-                get_template_part('partials/content/','event-card');
+                get_template_part('partials/content/','description-evenement');
             endwhile;
             wp_reset_query();
 

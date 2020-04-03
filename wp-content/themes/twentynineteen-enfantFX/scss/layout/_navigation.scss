@@ -2,7 +2,11 @@
 .siteLogo{
   width: $nav-height;
   height: $nav-height;
+  @media screen and (max-width:1100px){
+    display:none;
+  }
 }
+.menu-menu-principal-container{width:100%;}
 .menu{
   position: absolute;
   z-index: 5;
@@ -10,51 +14,47 @@
   color: $white;
   display: flex;
   flex-flow: row nowrap;
-  height: $nav-height;
   width: 100%;
-
 
   .menu-navigation{
     margin: 0;
     display: flex;
-    justify-content: flex-end;
-      list-style: none;
-      height: $nav-height;
-      width: 100%;
-      align-items: center;
-      li{
-        height: inherit;
+    justify-content: flex-start;
+    list-style: none;
+    height: $nav-height;
+    width: 100%;
+    padding:0;
+    li{
+      height: inherit;
+      text-align: center;
+      margin: 0;
+      padding: 0 10px;
+      flex: 1 0 auto;
+      background-color: transparent;
+      transition: background-color 500ms linear;
+      &:hover{
+        background-color: $black;
+      }
+      a{
+        display: inline-block;
+        vertical-align: bottom;
+        line-height: 100px;
+        bottom: 0px;
+        margin: 0 ;
+        width: 100%;
         text-align: center;
-        margin: 0;
-        padding: 0 10px;
-        background-color: transparent;
-        transition: background-color 500ms linear;
+        height: inherit;
+        text-decoration: none;
+        color: $white;
+        border:0px transparent solid;
+        transition: border 250ms linear;
         &:hover{
-          background-color: $black;
+          border-bottom:4px $white solid;
         }
-        a{
-          display: inline-block;
-          vertical-align: bottom;
-          line-height: 100px;
-          bottom: 0px;
-          margin: 0 ;
-          width: 100%;
-          text-align: center;
-          height: inherit;
-          text-decoration: none;
-          color: $white;
-          border:0px transparent solid;
-          transition: border 250ms linear;
-          &:hover{
-            border-bottom:4px $white solid;
-          }
-          &:focus{
-            outline: 0px;
-          }
+        &:focus{
+          outline: 0px;
         }
       }
-    @media screen and (min-width:320px) and (max-width:719px){
-      display: none;
     }
   }
   label[for="burger"]{
@@ -62,9 +62,6 @@
     font-size: 40px;
     padding: 5px 0 5px 10px;
     cursor: pointer;
-    @media screen and (min-width:320px) and (max-width:719px){
-      display: block;
-    }
   }
 
   #burger{
@@ -78,6 +75,32 @@
       display: block;
       width: 100%;
       background-color: rgba(0,0,0, 0.8);
+    }
+  }
+}
+
+@media screen and (max-width:719px){
+  .menu {
+    .menu-navigation{
+      display:none;
+      padding-left:15px;
+    }
+    label[for="burger"]{
+      display: block;
+    }
+  }
+}
+
+@media screen and (min-width:720px) and (max-width:975px){
+  .menu .menu-navigation{
+    flex-flow:row wrap;
+    height: $s-nav-height;
+    li{
+      flex:0 0 20%;
+      height:$s-nav-item-height;
+      a{
+        line-height:unset;
+      }
     }
   }
 }

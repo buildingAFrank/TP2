@@ -1,24 +1,69 @@
 @keyframes gradient{
 
+    0%{
+      background-position: 0% 50%;
+      color:$white;
+    }
+    25%{
+      background-position: 100% 100%;
+      color:$black;
+    }
+    50%{
+      background-position: 100% 50%;
+      color:$white;
+    }
+    75%{
+      background-position: 100% 100%;
+      color:$black;
+    }
+    100%{
+      background-position: 0% 50%;
+      color:$white;
+    }
+
+  }
+
+@keyframes gradient-header{
   0%{
-    background-position: 0% 50%;
-    color:$white;
+    background-position: 100% 0%;
   }
-  25%{
-    background-position: 100% 100%;
-    color:$black;
-  }
-  50%{
-    background-position: 100% 50%;
-    color:$white;
-  }
-  75%{
-    background-position: 100% 100%;
-    color:$black;
-  }
+
   100%{
-    background-position: 0% 50%;
+    background-position: 0% 0%;
+  }
+}
+
+@keyframes text-header{
+  0%{
     color:$white;
+  }
+  45%{
+    color:$black;
+  }
+  60%{
+    color:$black;
+  }
+
+  100%{
+    color:$white;
+  }
+}
+
+
+
+@for $i from 1 through 3{
+
+  .eventsPreview{
+    .event-card:nth-child(#{$i})
+    {
+      .eventTitleContainer {
+        background: linear-gradient(90deg, rgba(0,255,42,1) 0%, rgba(0,255,42,1) 30%, rgba(255,255,255,1) 50%, rgba(0,255,42,1) 70%, rgba(0,255,42,1) 100%);
+        background-size: 400% 400%;
+        animation: gradient-header 3s ease infinite;
+        animation-delay:$i * 500ms;
+
+      }
+    }
   }
 
 }

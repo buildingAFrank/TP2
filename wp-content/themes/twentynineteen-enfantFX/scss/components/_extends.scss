@@ -1,0 +1,22 @@
+/*extends evenement*/
+
+
+.eventsMain{
+  @extend .eventsPreview;
+  flex-flow: row wrap;
+}
+
+.event-glance-main{
+  @extend .event-glance;
+  height: $card-height * 0.6;
+}
+
+
+.event-CTA-main{
+  @extend .event-CTA;
+  height: $main-card-height * .6;
+  .event-CTA__button{
+    margin: 15px auto;
+
+  }
+}
